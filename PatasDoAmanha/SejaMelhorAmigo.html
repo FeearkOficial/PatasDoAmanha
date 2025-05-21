@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apadrinhamento - Patas do Amanhã</title>
+    <link rel="stylesheet" href="../assets/css/SejaMelhorAmigo.css">
+    <link rel="shortcut icon" href="/assets/img/logo.jpg" type="image/png">
+    <script src="https://kit.fontawesome.com/8fc9072edd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<header class="area-header" id="header"></header>
+    
+    <!-- NOVA SEÇÃO: Nossa visão -->
+    <section class="pts-nossaVisao">
+        <!-- Seção com apelo emocional para doações -->
+        <div class="pts-visao">
+            <!-- Container para conteúdo -->
+            <h2>Seja Melhor Amigo</h2>
+            <h3 >Adote um amiguinho de quatro patas no coração!</h3>
+
+            <!-- Título principal -->
+            <!-- Novo contêiner para alinhar texto e imagem lado a lado -->
+            <div class="conteudo">
+                <div class="pts-stories">
+                    <!-- Histórias de animais resgatados -->
+                    <p class="pts-stories-paragrafo">Na nossa ONG, <span class="pts-destaque">cada latido, miado e olhar carente carrega uma história</span> — algumas de abandono, outras de sofrimento, mas todas com algo em comum: <span class="pts-destaque">o desejo de serem amadas</span>.
+
+                        É por isso que <span class="pts-destaque">nos dedicamos, dia após dia, a transformar essas histórias</span>. Oferecemos <span class="pts-destaque">um lar temporário repleto de cuidado, carinho e dignidade</span>, onde cada animal é tratado como único, com respeito, atenção e muito amor.
+                        
+                        Mas para que esse trabalho continue, <span class="pts-destaque">precisamos de corações generosos dispostos a fazer parte dessa jornada</span>.
+                        
+                        <span class="pts-destaque">Ser um padrinho ou madrinha vai muito além da contribuição financeira</span> — é <span class="pts-destaque">um gesto de empatia, responsabilidade e afeto</span>.
+                        
+                        Ao preencher o questionário abaixo, <span class="pts-destaque">você nos ajuda a encontrar o companheiro ideal para apadrinhar</span>, aquele que mais combina com <span class="pts-destaque">seu jeito, sua energia e seu coração</span>.
+                        
+                        Com uma contribuição mensal de <span class="pts-destaque">R$100,00</span>, <span class="pts-destaque">você se torna uma presença constante na vida de um dos nossos resgatados</span>.
+                        
+                        E como todo vínculo verdadeiro, ele também se fortalece com o tempo: <span class="pts-destaque">você receberá atualizações, fotos e notícias do seu afilhado</span>, e <span class="pts-destaque">poderá visitá-lo periodicamente em nosso sítio</span> — <span class="pts-destaque">um cantinho de paz onde momentos de afeto se tornam memórias inesquecíveis</span>.
+                        
+                        <span class="pts-destaque">Apadrinhar é mais do que ajudar. É fazer parte de uma vida. É dar esperança. É transformar a realidade de um focinho que, com sua ajuda, volta a acreditar no amor.</span>
+                </div>
+            </div>
+        </div>
+        <div class="pts-container">
+            <h1 class="pts-title">Formulário de Adoção</h1>
+            <form action="#" method="POST">
+        
+              <label class="pts-label" for="nome">Nome completo:</label>
+              <input class="pts-input" type="text" id="nome" name="nome" required />
+        
+              <label class="pts-label" for="idade">Idade:</label>
+              <input class="pts-input" type="number" id="idade" name="idade" min="18" required />
+        
+              <label class="pts-label" for="telefone">Telefone para contato:</label>
+              <input class="pts-input" type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required />
+        
+              <label class="pts-label" for="email">E-mail:</label>
+              <input class="pts-input" type="email" id="email" name="email" required />
+        
+              <label class="pts-label" for="endereco">Endereço completo:</label>
+              <input class="pts-input" type="text" id="endereco" name="endereco" required />
+        
+              <label class="pts-label" for="tipo_residencia">Tipo de residência:</label>
+              <select class="pts-select" id="tipo_residencia" name="tipo_residencia" required>
+                <option value="">Selecione</option>
+                <option value="casa">Casa</option>
+                <option value="apartamento">Apartamento</option>
+                <option value="chacara">Chácara / Sítio</option>
+                <option value="outro">Outro</option>
+              </select>
+        
+              <label class="pts-label" for="tem_animais">Possui outros animais?</label>
+              <select class="pts-select" id="tem_animais" name="tem_animais" required>
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+              </select>
+        
+              <label class="pts-label" for="motivo_adocao">Por que deseja adotar um animal?</label>
+              <textarea class="pts-textarea" id="motivo_adocao" name="motivo_adocao" required></textarea>
+        
+              <label class="pts-label" for="tempo_disponivel">Quanto tempo por dia você terá para o animal?</label>
+              <input class="pts-input" type="text" id="tempo_disponivel" name="tempo_disponivel" required />
+        
+              <label class="pts-label" for="autorizacao">Todos na residência concordam com a adoção?</label>
+              <select class="pts-select" id="autorizacao" name="autorizacao" required>
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+              </select>
+        
+              <label class="pts-label" for="tipo_animal">Você deseja adotar um:</label>
+              <select class="pts-select" id="tipo_animal" name="tipo_animal" required>
+                <option value="">Selecione</option>
+                <option value="cachorro">Cachorro</option>
+                <option value="gato">Gato</option>
+                <option value="outro">Outro</option>
+              </select>
+        
+              <label class="pts-label" for="mensagem">Deseja deixar uma mensagem?</label>
+              <textarea class="pts-textarea" id="mensagem" name="mensagem"></textarea>
+        
+              <button class="pts-button" type="submit">Enviar formulário</button>
+            </form>
+          </div>
+        
+    </section>
+
+
+<footer class="pts-site-footer" id="footer"></footer>
+<script src="/assets/js/script.js"></script>
+</body>
+</html>

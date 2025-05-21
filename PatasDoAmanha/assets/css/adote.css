@@ -1,0 +1,193 @@
+/*
+ * ===== VARIÁVEIS GLOBAIS =====
+ * Define variáveis CSS reutilizáveis em todo o documento
+ */
+ :root {
+    --primary-color: #2E8B57;                   /* Cor primária (verde escuro) */
+    --secondary-color: #333b36;                 /* Cor secundária (--) */
+    --accent-color: #ff6b6b;                    /* Cor de destaque (rosa/vermelho) */
+    --text-color: #333;                         /* Cor padrão para texto */
+    --light-bg: rgba(247, 248, 239, 0.788);     /* Cor de fundo clara */
+    --dark-bg: #2c3e50;                         /* Cor de fundo escura */
+    --header-height: 100px;                       /* Altura do cabeçalho */
+    --caramel: hsla(30, 53%, 53%, 1);
+    --ivory-2: hsla(69, 76%, 97%, 1);
+    --citron: hsla(63, 40%, 60%, 1);
+    --light-bg2: rgba(237, 238, 231, 0.788);
+}
+/*
+===== RESET E CONFIGURAÇÕES GERAIS =====
+ Remove margens, paddings e bordas padrão e define box-sizing para border-box
+*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box; /* Faz com que padding e border não aumentem o tamanho do elemento */
+}
+/*Configurações gerais do corpo do documento*/
+body {
+    font-family: 'SoDo Sans', 'Nunito', sans-serif; /* Define a família de fontes */
+    width: 100%; /* Largura total */
+    min-height: 100vh; /* Altura mínima igual à altura da viewport */
+    display: flex; /* Ativa flexbox */
+    flex-direction: column; /* Organiza os filhos em coluna */
+    background-color: var(--light-bg); /* Cor de fundo branca */
+    color: var(--text-color); /* Cor do texto usando variável */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    padding-top: 0px; /* Remove padding superior */
+}
+/*===== IMPORTAÇÃO DE FONTES =====*/
+/* Importa e define fontes personalizadas*/
+/* Importa a fonte Nunito do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+ 
+/* Define a fonte personalizada SoDo Sans em três pesos diferentes */
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('/assets/fonts/SoDoSans-Bold.woff'); /* Caminho para o arquivo da fonte */
+    font-weight: bold;
+    font-style: normal; /* Estilo da fonte */
+}
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('/assets/fonts/SoDoSans-Regular.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('/assets/fonts/SoDoSans-SemiBold.woff');
+    font-weight: 600; /* Semi-negrito */
+    font-style: normal;
+}
+.pts-navDoacao{
+    display: flex;
+    align-items: center;
+    margin: 5%;
+}
+.pts-textDoacao h2::after{
+    font-size: 20px;
+}
+.pts-textDoacao h1{
+    font-size: 50px;
+}
+.pts-textDoacao a{
+    font-size: 20px;
+    text-decoration: none;
+}
+.pts-imgAdotantes{
+    display: block;
+}
+/* flip card */
+/* Container em grade com 3 colunas */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 colunas */
+    gap: 20px;                             /* Espaço entre os cartões */
+    padding: 40px;
+    justify-items: center;                /* Centraliza os cartões */
+    align-items: center;
+    background-color: var(--light-bg2);
+    min-height: 100vh;
+}
+/* Cada cartão individual */
+.flip-wrapper {
+    width: 300px;
+    height: 400px;
+}
+/* Estilo base do cartão flip */
+.flip-card {
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    cursor: pointer;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d; 
+}
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.flip-card-back {
+    background:var(--citron);
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    padding: 20px;
+}
+/* Linha separadora */
+.minha-linha {
+  height: 1px;
+  background-color: #c5c1c1; /* Cor da linha */
+  width: 100%; /* Largura da linha */
+}
+/* Text Duvias */
+.pts-text {
+    text-align: center;
+    font-size: 30px;
+    margin: 50px;
+}
+.pts-textDuvidas {
+    display: inline-block;
+    text-align: left;
+}
+/* Css Perguntas e respostas */
+.faq {
+    max-width: 100vh;
+    margin-left: 25%;
+    padding-bottom: 5%;
+}
+details {
+  padding: 15px 20px;
+  transition: all 0.8s ease;
+}
+summary {
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::after {
+  content: "\f363";
+  font-family: 'Font Awesome 6 Free';
+  position: absolute;
+  right: 0;
+  transition: transform 0.8s ease;
+}
+details[open] summary::after {
+  transform: rotate(90deg);
+}
+.answer {
+  margin-top: 10px;
+  color: #333;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+

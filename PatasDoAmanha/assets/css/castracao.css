@@ -1,0 +1,191 @@
+/*
+ * ===== VARIÁVEIS GLOBAIS =====
+ * Define variáveis CSS reutilizáveis em todo o documento
+ */
+ :root {
+    --primary-color: #2E8B57;                   /* Cor primária (verde escuro) */
+    --secondary-color: #333b36;                 /* Cor secundária (--) */
+    --accent-color: #ff6b6b;                    /* Cor de destaque (rosa/vermelho) */
+    --text-color: #333;                         /* Cor padrão para texto */
+    --light-bg: rgba(247, 248, 239, 0.788);     /* Cor de fundo clara */
+    --dark-bg: #2c3e50;                         /* Cor de fundo escura */
+    --header-height: 100px;                       /* Altura do cabeçalho */
+    --caramel: hsla(30, 53%, 53%, 1);
+    --ivory-2: hsla(69, 76%, 97%, 1);
+    --citron: hsla(63, 40%, 60%, 1);
+    --light-bg2: rgba(237, 238, 231, 0.788);
+}
+/*
+===== RESET E CONFIGURAÇÕES GERAIS =====
+ Remove margens, paddings e bordas padrão e define box-sizing para border-box
+*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box; /* Faz com que padding e border não aumentem o tamanho do elemento */
+}
+/*Configurações gerais do corpo do documento*/
+body {
+    font-family: 'SoDo Sans', 'Nunito', sans-serif; /* Define a família de fontes */
+    width: 100%; /* Largura total */
+    min-height: 100vh; /* Altura mínima igual à altura da viewport */
+    display: flex; /* Ativa flexbox */
+    flex-direction: column; /* Organiza os filhos em coluna */
+    background-color: var(--light-bg); /* Cor de fundo branca */
+    color: var(--text-color); /* Cor do texto usando variável */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    padding-top: 0px; /* Remove padding superior */
+}
+/*===== IMPORTAÇÃO DE FONTES =====*/
+/* Importa e define fontes personalizadas*/
+/* Importa a fonte Nunito do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+ 
+/* Define a fonte personalizada SoDo Sans em três pesos diferentes */
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('/assets/fonts/SoDoSans-Bold.woff'); /* Caminho para o arquivo da fonte */
+    font-weight: bold;
+    font-style: normal; /* Estilo da fonte */
+}
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('/assets/fonts/SoDoSans-Regular.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('/assets/fonts/SoDoSans-SemiBold.woff');
+    font-weight: 600; /* Semi-negrito */
+    font-style: normal;
+}
+
+
+
+
+
+/* Castração */
+
+section {
+    padding: 2rem 1.5rem;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+  }
+  
+  h3 {
+    color: var(--secondary-color);
+    margin-top: 1rem;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  
+  table th,
+  table td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  table th {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #35a766;
+  }
+  
+  .highlight-box {
+    background-color: var(--light-bg);
+    padding: 1rem;
+    border-left: 5px solid var(--caramel);
+    margin: 1.5rem 0;
+  }
+  
+  .stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .stat-box {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    border: 2px solid var(--secondary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+  }
+  
+  .features-list,
+  .benefits-list {
+    list-style: none;
+    padding-left: 1rem;
+  }
+  
+  .features-list li::before,
+  .benefits-list li::before {
+    content: '🐾';
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+  }
+  
+  .big-number {
+    font-size: 3rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .protectors-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  
+  .protector-card {
+    background-color: var(--light-bg);
+    border-left: 5px solid var(--accent-color);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.05);
+  }
+  
