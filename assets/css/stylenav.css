@@ -1,0 +1,359 @@
+/*
+ * ===== VARIÁVEIS GLOBAIS =====
+ * Define variáveis CSS reutilizáveis em todo o documento
+ */
+ :root {
+    --primary-color: #2E8B57;                   /* Cor primária (verde escuro) */
+    --secondary-color: #333b36;                 /* Cor secundária (--) */
+    --accent-color: #ff6b6b;                    /* Cor de destaque (rosa/vermelho) */
+    --text-color: #333;                         /* Cor padrão para texto */
+    --light-bg: rgba(247, 248, 239, 0.788);     /* Cor de fundo clara */
+    --dark-bg: #2c3e50;                         /* Cor de fundo escura */
+    --header-height: 100px;                       /* Altura do cabeçalho */
+    --caramel: hsla(30, 53%, 53%, 1);
+    --ivory-2: hsla(69, 76%, 97%, 1);
+    --citron: hsla(63, 40%, 60%, 1);
+}
+/*
+ * ===== RESET E CONFIGURAÇÕES GERAIS =====
+ * Remove margens, paddings e bordas padrão e define box-sizing para border-box
+ */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box; /* Faz com que padding e border não aumentem o tamanho do elemento */
+}
+/*
+ * Configurações gerais do corpo do documento
+ */
+body {
+    font-family: 'SoDo Sans', 'Nunito', sans-serif; /* Define a família de fontes */
+    width: 100%; /* Largura total */
+    min-height: 100vh; /* Altura mínima igual à altura da viewport */
+    display: flex; /* Ativa flexbox */
+    flex-direction: column; /* Organiza os filhos em coluna */
+    background-color: var(--light-bg); /* Cor de fundo branca */
+    color: var(--text-color); /* Cor do texto usando variável */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    padding-top: 0px; /* Remove padding superior */
+}
+/*
+ * ===== IMPORTAÇÃO DE FONTES =====
+ * Importa e define fontes personalizadas
+ */
+ 
+/* Importa a fonte Nunito do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+ 
+/* Define a fonte personalizada SoDo Sans em três pesos diferentes */
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('/assets/fonts/SoDoSans-Bold.woff'); /* Caminho para o arquivo da fonte */
+    font-weight: bold;
+    font-style: normal; /* Estilo da fonte */
+}
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('/assets/fonts/SoDoSans-Regular.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('/assets/fonts/SoDoSans-SemiBold.woff');
+    font-weight: 600; /* Semi-negrito */
+    font-style: normal;
+}
+/*
+ * ===== HEADER CORRIGIDO =====
+ * Estilização do cabeçalho fixo no topo da página
+ */
+header {
+    position: fixed; /* Fixa o cabeçalho no topo */
+    top: 0;
+    left: 0;
+    width: 100%; /* Largura total */
+    height: var(--header-height); /* Altura usando variável */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    background-color: var(--ivory-2); /* Fundo branco com leve transparência */
+    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+    -webkit-backdrop-filter: blur(5px); /* Versão para Safari */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Borda inferior sutil */
+    transition: all 0.3s ease; /* Transição suave para animações */
+
+}
+/*
+ * Efeito aplicado ao cabeçalho quando a página é rolada
+ */
+header.scrolled {
+    height: 80px; /* Altura reduzida */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra mais pronunciada */
+}
+/*
+ * Container principal do cabeçalho
+ */
+.area-header {
+    max-width: 100vw; /* Largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0 2rem; /* Espaçamento interno */
+    height: 100%; /* Altura total do cabeçalho */
+    display: flex; /* Ativa flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    position: relative; /* Permite posicionamento relativo de elementos filhos */
+}
+/*
+ * Área do logo
+ */
+.area-logo {
+    height: 100%; /* Altura total do cabeçalho */
+    width: 130px; /* Largura fixa */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+/*
+ * Imagem do logo
+ */
+.area-logo-img {
+    padding: 3px;
+    width: 120px; /* Largura fixa */
+    height: 120px; /* Altura proporcional */
+    border-radius: 100%; /* Torna a imagem circular */
+    transition: transform 0.3s ease; /* Transição suave para hover */
+}
+/*
+ * Efeito de hover na imagem do logo
+ */
+.area-logo-img:hover {
+    transform: scale(1.15) translateY(1px); /* Aumenta ligeiramente e desloca para baixo */
+}
+/*
+ * Área de navegação principal
+ */
+.area-nav {
+    height: 100%; /* Altura total do cabeçalho */
+    flex: 1; /* Ocupa todo o espaço disponível */
+}
+/*
+ * Lista de navegação
+ */
+.nav-list {
+    margin-left: 80px; /* Margem à esquerda */
+    height: 100%; /* Altura total */
+    width: 100%; /* Largura total */
+    display: flex; /* Ativa flexbox */
+    list-style: none; /* Remove marcadores de lista */
+    gap: 20px; /* Espaçamento entre itens */
+}
+/*
+ * Itens individuais da lista de navegação
+ */
+.nav-list-item {
+    padding: 8px; /* Espaçamento interno */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    color: black; /* Cor do texto */
+    text-transform: uppercase; /* Transforma texto em maiúsculas */
+    letter-spacing: 0.7px; /* Espaçamento entre letras */
+    position: relative; /* Permite posicionamento absoluto de elementos filhos */
+}
+/*
+ * Efeito de hover nos itens de navegação
+ */
+.nav-list-item:hover a {
+    color: var(--secondary-color); /* Muda cor ao passar o mouse */
+    cursor: pointer; /* Muda cursor para pointer */
+}
+/*
+ * Links dentro dos itens de navegação
+ */
+.nav-list-item a {
+    text-decoration: none; /* Remove sublinhado */
+    color: #000000; /* Cor do texto */
+    font-size: 15px; /* Tamanho da fonte */
+    transition: color 0.3s ease; /* Transição suave de cor */
+    position: relative; /* Permite posicionamento absoluto de pseudo-elementos */
+    padding: 8px 0; /* Espaçamento interno */
+}
+/*
+ * Efeito de underline animado nos links
+ */
+.nav-list-item a::after {
+    content: ''; /* Conteúdo vazio */
+    position: absolute; /* Posicionamento absoluto em relação ao link */
+    bottom: 0; /* Alinha na base */
+    left: 0; /* Alinha à esquerda */
+    width: 0; /* Inicialmente sem largura */
+    height: 2px; /* Altura do underline */
+    background-color: var(--primary-color); /* Cor do underline */
+    transition: width 0.3s ease; /* Transição suave da largura */
+}
+/*
+ * Efeito de hover no underline
+ */
+.nav-list-item:hover a::after {
+    width: 100%; /* Expandir para largura total */
+}
+/*
+ * Itens de menu que possuem submenu
+ */
+.has-submenu {
+    position: relative; /* Permite posicionamento absoluto do submenu */
+}
+/*
+ * Estilização do submenu
+ */
+.submenu {
+    position: absolute; /* Posicionamento absoluto em relação ao item pai */
+    top: calc(100% + 5px); /* Posiciona abaixo do item com pequeno espaçamento */
+    left: 0;
+    width: 200px; /* Largura fixa */
+    background-color: var(--light-bg); /* Fundo branco */
+    list-style: none; /* Remove marcadores de lista */
+    padding: 10px 0; /* Espaçamento interno */
+    z-index: 1100; /* Garante que fique acima do cabeçalho */
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    border-radius: 8px; /* Bordas arredondadas */
+    opacity: 0; /* Inicialmente invisível */
+    visibility: hidden; /* Inicialmente escondido */
+    transform: translateY(10px); /* Deslocado para baixo */
+    transition: all 0.3s ease; /* Transição suave */
+}
+/*
+ * Links dentro do submenu
+ */
+.submenu li a {
+    display: block; /* Transforma em bloco */
+    padding: 8px 20px; /* Espaçamento interno */
+    text-decoration: none; /* Remove sublinhado */
+    color: #333; /* Cor do texto */
+    transition: background 0.3s; /* Transição suave de fundo */
+    font-size: 14px; /* Tamanho da fonte */
+    text-transform: none; /* Mantém capitalização original */
+}
+/*
+ * Efeito de hover nos itens do submenu
+ */
+.submenu li a:hover {
+    background: #f0f0f0; /* Fundo cinza claro ao passar o mouse */
+}
+/*
+ * Mostra o submenu ao passar o mouse no item pai
+ */
+.nav-list-item:hover .submenu {
+    opacity: 1; /* Torna visível */
+    visibility: visible; /* Torna visível */
+    transform: translateY(0); /* Remove deslocamento */
+}
+
+
+
+
+ /* ===== BOTÃO DE DOAÇÃO ===== */
+
+/* Container do botão - define o contexto de formatação */
+.pts-contato-btn {
+    display: inline-block; /* Faz o container se comportar como elemento inline, mas permite propriedades de bloco */
+}
+/* Estilos do botão de doação */
+.pts-donate {
+    display: inline-block; /* Permite que o botão fique em linha mas aceite dimensões */
+    padding: 0.5rem 1.2rem; /* Espaçamento interno: 0.5rem topo/base, 1.2rem esquerda/direita */
+    background-color: var(--primary-color); /* Cor de fundo usando variável CSS */
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado de elementos âncora */
+    border-radius: 20px; /* Arredondamento das bordas (raio de 20px) */
+    font-weight: bold; /* Texto em negrito */
+    font-size: 13px; /* Tamanho do texto */
+    transition: all 0.3s ease; /* Anima todas as mudanças de propriedade em 0.3s com curva ease */
+    box-shadow: 0 2px 5px rgba(76, 175, 80, 0.3); /* Sombra com tom esverdeado (x, y, blur, cor) */
+    cursor: pointer; /* Muda o cursor para a mãozinha */
+    border: none; /* Remove a borda padrão */
+    line-height: 1; /* Alinhamento vertical do texto (1 = mesmo tamanho da fonte) */
+}
+/* Estilo do estado hover */
+.pts-donate:hover {
+    opacity: 0.9; /* Torna o botão levemente transparente ao passar o mouse */
+    transform: none; /* Sobrescreve qualquer transform (medida de segurança) */
+    background-color: var(--primary-color); /* Garante que a cor de fundo permaneça a mesma */
+}
+ /* Área de localização da loja */
+.nav-store-location {
+    min-width: 160px; /* Largura mínima */
+    height: 100%; /* Altura total do cabeçalho */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+/*
+ * Link de localização da loja
+ */
+.store-location {
+    height: 30px; /* Altura fixa */
+    text-decoration: none; /* Remove sublinhado */
+    color: #000000; /* Cor do texto */
+    font-size: 14px; /* Tamanho da fonte */
+    white-space: nowrap; /* Evita quebra de linha */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    gap: 5px; /* Espaçamento entre ícone e texto */
+}
+/*
+ * Efeito de hover no link de localização
+ */
+.nav-store-location:hover a {
+    color: var(--secondary-color); /* Muda cor ao passar o mouse */
+    cursor: pointer; /* Muda cursor para pointer */
+}
+/*
+ * ===== RODAPÉ =====
+ * Estilização do rodapé do site
+ */
+.pts-site-footer {
+    width: 100%; /* Largura total */
+    background: linear-gradient(135deg, var(--dark-bg), #1a252fce); /* Gradiente de fundo */
+    color: white; /* Cor do texto */
+    padding: 3rem 0; /* Espaçamento interno */
+    margin-top: auto; /* Empurra para baixo em layouts flex */
+}
+/*
+ * Conteúdo do rodapé
+ */
+.pts-footer-content {
+    max-width: 1200px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    display: grid; /* Ativa grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas responsivas */
+    gap: 2rem; /* Espaçamento entre colunas */
+    padding: 0 2rem; /* Espaçamento interno */
+}
+/*
+ * Seções individuais do rodapé
+ */
+.pts-footer-section h2, .pts-footer-section h3 {
+    margin-bottom: 1rem; /* Espaçamento inferior */
+    color: var(--light-bg); /* Cor do texto */
+    position: relative; /* Permite posicionamento absoluto de pseudo-elementos */
+    padding-bottom: 10px; /* Espaçamento inferior */
+}
+/*
+ * Linha decorativa abaixo dos títulos do rodapé
+ */
+.pts-footer-section h2::after {
+    content: ''; /* Conteúdo vazio */
+    position: absolute; /* Posicionamento absoluto */
+    bottom: 0;
+    left: 0;
+    width: 42%; /* Largura */
+    height: 1px; /* Altura */
+    background-color: var(--light-bg); /* Cor da linha */
+}
+/*
+ * Parágrafos no rodapé
+ */
+.pts-footer-section p {
+    margin-bottom: 0.5rem; /* Espaçamento inferior */
+    line-height: 1.5; /* Espaçamento entre linhas */
+}

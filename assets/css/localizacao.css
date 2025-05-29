@@ -1,0 +1,106 @@
+/*
+ * ===== VARIÁVEIS GLOBAIS =====
+ * Define variáveis CSS reutilizáveis em todo o documento
+ */
+ :root {
+    --primary-color: #2E8B57;                   /* Cor primária (verde escuro) */
+    --secondary-color: #333b36;                 /* Cor secundária (--) */
+    --accent-color: #ff6b6b;                    /* Cor de destaque (rosa/vermelho) */
+    --text-color: #333;                         /* Cor padrão para texto */
+    --light-bg: rgba(247, 248, 239, 0.788);     /* Cor de fundo clara */
+    --dark-bg: #2c3e50;                         /* Cor de fundo escura */
+    --header-height: 100px;                       /* Altura do cabeçalho */
+    --caramel: hsla(30, 53%, 53%, 1);
+    --ivory-2: hsla(69, 76%, 97%, 1);
+    --citron: hsla(63, 40%, 60%, 1);
+    --light-bg2: rgba(237, 238, 231, 0.788);
+}
+/*
+===== RESET E CONFIGURAÇÕES GERAIS =====
+ Remove margens, paddings e bordas padrão e define box-sizing para border-box
+*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box; /* Faz com que padding e border não aumentem o tamanho do elemento */
+}
+/*Configurações gerais do corpo do documento*/
+body {
+    font-family: 'SoDo Sans', 'Nunito', sans-serif; /* Define a família de fontes */
+    width: 100%; /* Largura total */
+    min-height: 100vh; /* Altura mínima igual à altura da viewport */
+    display: flex; /* Ativa flexbox */
+    flex-direction: column; /* Organiza os filhos em coluna */
+    background-color: var(--light-bg); /* Cor de fundo branca */
+    color: var(--text-color); /* Cor do texto usando variável */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    padding-top: 0px; /* Remove padding superior */
+}
+/*===== IMPORTAÇÃO DE FONTES =====*/
+/* Importa e define fontes personalizadas*/
+/* Importa a fonte Nunito do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+ 
+/* Define a fonte personalizada SoDo Sans em três pesos diferentes */
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('/assets/fonts/SoDoSans-Bold.woff'); /* Caminho para o arquivo da fonte */
+    font-weight: bold;
+    font-style: normal; /* Estilo da fonte */
+}
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('/assets/fonts/SoDoSans-Regular.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('/assets/fonts/SoDoSans-SemiBold.woff');
+    font-weight: 600; /* Semi-negrito */
+    font-style: normal;
+}
+/* Texto central */
+.pts-text1 {
+    text-align: center;
+    font-size: 30px;
+    margin: 50px;
+}
+.pts-textDuvidas {
+    display: inline-block;
+    text-align: left;
+}
+/* Css localização */
+.pts-mapa {
+    display: flex;
+    margin:5%;
+}
+/* Funcionamento */
+.pts-funcionamento {
+    width: 30%;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 5% ;
+}
+.pts-funcionamento h1 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.pts-funcionamento ul {
+    list-style: none;
+}
+.pts-funcionamento li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 22px;
+}
+.pts-funcionamento li:last-child {
+    border-bottom: none;
+}
+.pts-funcionamento a{
+    font-size: 20px;
+    text-decoration: none;
+}

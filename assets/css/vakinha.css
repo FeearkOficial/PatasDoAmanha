@@ -1,0 +1,374 @@
+/*
+ * ===== VARIÁVEIS GLOBAIS =====
+ * Define variáveis CSS reutilizáveis em todo o documento
+ */
+ :root {
+    --primary-color: #2E8B57;                   /* Cor primária (verde escuro) */
+    --secondary-color: #333b36;                 /* Cor secundária (--) */
+    --accent-color: #ff6b6b;                    /* Cor de destaque (rosa/vermelho) */
+    --text-color: #333;                         /* Cor padrão para texto */
+    --light-bg: rgba(247, 248, 239, 0.788);     /* Cor de fundo clara */
+    --dark-bg: #2c3e50;                         /* Cor de fundo escura */
+    --header-height: 100px;                       /* Altura do cabeçalho */
+    --caramel: hsla(30, 53%, 53%, 1);
+    --ivory-2: hsla(69, 76%, 97%, 1);
+    --citron: hsla(63, 40%, 60%, 1);
+    --light-bg2: rgba(237, 238, 231, 0.788);
+}
+/*
+===== RESET E CONFIGURAÇÕES GERAIS =====
+ Remove margens, paddings e bordas padrão e define box-sizing para border-box
+*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box; /* Faz com que padding e border não aumentem o tamanho do elemento */
+}
+/*Configurações gerais do corpo do documento*/
+body {
+    font-family: 'SoDo Sans', 'Nunito', sans-serif; /* Define a família de fontes */
+    width: 100%; /* Largura total */
+    min-height: 100vh; /* Altura mínima igual à altura da viewport */
+    display: flex; /* Ativa flexbox */
+    flex-direction: column; /* Organiza os filhos em coluna */
+    background-color: var(--light-bg); /* Cor de fundo branca */
+    color: var(--text-color); /* Cor do texto usando variável */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    padding-top: 0px; /* Remove padding superior */
+}
+/*===== IMPORTAÇÃO DE FONTES =====*/
+/* Importa e define fontes personalizadas*/
+/* Importa a fonte Nunito do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+ 
+/* Define a fonte personalizada SoDo Sans em três pesos diferentes */
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('/assets/fonts/SoDoSans-Bold.woff'); /* Caminho para o arquivo da fonte */
+    font-weight: bold;
+    font-style: normal; /* Estilo da fonte */
+}
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('/assets/fonts/SoDoSans-Regular.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('/assets/fonts/SoDoSans-SemiBold.woff');
+    font-weight: 600; /* Semi-negrito */
+    font-style: normal;
+}
+
+
+/* Vakinhas  */
+
+/* 
+ * ===== SEÇÃO EMOCIONAL =====
+ * Seção com apelo emocional e estatísticas
+ */
+ .pts-emotional-appeal {
+    background-color: var(--light-bg); /* Cor de fundo clara */
+    padding: 2rem 0; /* Espaçamento interno */
+}
+
+/* 
+ * Container da seção emocional
+ */
+.pts-emotional-container {
+    max-width: 800px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0 2rem; /* Espaçamento interno */
+}
+
+/* 
+ * Título da seção emocional
+ */
+.pts-emotional-appeal h2 {
+    color: var(--primary-color); /* Cor do texto */
+    font-size: 2rem; /* Tamanho da fonte */
+    text-align: center; /* Centraliza texto */
+    margin-bottom: 2rem; /* Espaçamento inferior */
+    text-transform: uppercase; /* Transforma em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+/* 
+ * Parágrafos da seção emocional
+ */
+.pts-emotional-appeal p {
+    margin-bottom: 1.5rem; /* Espaçamento inferior */
+    line-height: 1.8; /* Espaçamento entre linhas */
+    font-size: 1.1rem; /* Tamanho da fonte */
+}
+
+/* 
+ * Texto em negrito na seção emocional
+ */
+.pts-emotional-appeal strong {
+    color: var(--primary-color); /* Cor do texto */
+    font-weight: 600; /* Peso da fonte */
+}
+
+/* 
+ * Container de estatísticas
+ */
+.pts-stats {
+    display: flex; /* Ativa flexbox */
+    justify-content: space-around; /* Distribui espaço uniformemente */
+    flex-wrap: wrap; /* Permite quebra de linha */
+    margin: 2rem 0; /* Espaçamento externo */
+    gap: 1rem; /* Espaçamento entre itens */
+}
+
+/* 
+ * Itens individuais de estatística
+ */
+.pts-stat-item {
+    text-align: center; /* Centraliza texto */
+    flex: 1; /* Ocupa espaço disponível */
+    min-width: 150px; /* Largura mínima */
+    padding: 1rem; /* Espaçamento interno */
+    background-color: white; /* Cor de fundo */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+/* 
+ * Número nas estatísticas
+ */
+.pts-stat-number {
+    display: block; /* Transforma em bloco */
+    font-size: 2rem; /* Tamanho grande */
+    font-weight: bold; /* Negrito */
+    color: var(--primary-color); /* Cor do texto */
+    line-height: 1; /* Espaçamento entre linhas */
+}
+
+/* 
+ * Rótulo nas estatísticas
+ */
+.pts-stat-label {
+    font-size: 0.9rem; /* Tamanho pequeno */
+    color: #666; /* Cor do texto cinza */
+}
+
+/* 
+ * Texto final da seção emocional
+ */
+.pts-emotional-final {
+    font-style: italic; /* Texto em itálico */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    color: #555; /* Cor do texto */
+    text-align: center; /* Centraliza texto */
+    margin: 2rem 0; /* Espaçamento externo */
+    padding: 1rem; /* Espaçamento interno */
+    border-left: 3px solid var(--accent-color); /* Borda lateral colorida */
+    background-color: rgba(255, 255, 255, 0.7); /* Fundo branco semi-transparente */
+}
+
+/* 
+ * Chamada para ação na seção emocional
+ */
+.pts-call-to-action {
+    text-align: center; /* Centraliza texto */
+    font-weight: bold; /* Negrito */
+    font-size: 1.3rem; /* Tamanho da fonte */
+    color: var(--primary-color); /* Cor do texto */
+    margin-top: 2rem; /* Espaçamento superior */
+    animation: pulse 2s infinite; /* Animação de pulsar */
+}
+
+/* 
+ * Animação de pulsar para a chamada para ação
+ */
+@keyframes pulse {
+    0% { transform: scale(1); } /* Tamanho normal */
+    50% { transform: scale(1.05); } /* Aumenta ligeiramente */
+    100% { transform: scale(1); } /* Volta ao normal */
+}
+
+/* 
+ * ===== SEÇÃO VAKINHA =====
+ * Seção de arrecadação/vaquinha
+ */
+.pts-vakinha-section {
+    flex: 1; /* Ocupa espaço disponível */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 2rem; /* Espaçamento interno */
+    background-color: var(--light-bg); /* Cor de fundo clara */
+}
+
+/* 
+ * Container da vaquinha
+ */
+.pts-vakinha-container {
+    background-color: white; /* Cor de fundo */
+    padding: 2rem; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra sutil */
+    max-width: 650px; /* Largura máxima */
+    width: 100%; /* Largura total */
+    text-align: center; /* Centraliza texto */
+}
+
+/* 
+ * Container da barra de progresso
+ */
+.pts-progress-container {
+    width: 100%; /* Largura total */
+    height: 30px; /* Altura fixa */
+    background-color: #e9ecef; /* Cor de fundo cinza */
+    border-radius: 15px; /* Bordas arredondadas */
+    margin: 2rem 0; /* Espaçamento externo */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa */
+}
+
+/* 
+ * Barra de progresso animada
+ */
+.pts-progress-bar {
+    height: 100%; /* Altura total */
+    background: linear-gradient(90deg, #4CAF50, #2E8B57); /* Gradiente verde */
+    border-radius: 15px; /* Bordas arredondadas */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    color: white; /* Cor do texto */
+    font-weight: bold; /* Negrito */
+    font-size: 0.8rem; /* Tamanho da fonte */
+    width: 0; /* Inicialmente sem largura */
+    animation: pts-fillProgress 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards; /* Animação de preenchimento */
+    position: relative; /* Permite posicionamento absoluto de pseudo-elementos */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa */
+}
+
+/* 
+ * Animação principal da barra de progresso
+ */
+@keyframes pts-fillProgress {
+    to {
+        width: var(--progress); /* Expande até a porcentagem definida */
+    }
+}
+
+/* 
+ * Efeito de onda sutil na barra de progresso
+ */
+.pts-progress-bar::after {
+    content: '';
+    position: absolute; /* Posicionamento absoluto */
+    top: 0;
+    left: -100%; /* Começa fora da barra */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255,255,255,0.4), 
+                transparent); /* Gradiente transparente */
+    animation: pts-waveEffect 2s infinite; /* Animação infinita */
+    animation-delay: 1.5s; /* Atraso para começar após o preenchimento */
+}
+
+/* 
+ * Animação do efeito de onda
+ */
+@keyframes pts-waveEffect {
+    to {
+        left: 100%; /* Move para a direita */
+    }
+}
+
+/* 
+ * Informações da vaquinha (arrecadado, meta, etc)
+ */
+.pts-vakinha-info {
+    display: grid; /* Ativa grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas de tamanho igual */
+    gap: 1rem; /* Espaçamento entre itens */
+    margin: 1.5rem 0; /* Espaçamento externo */
+    font-size: 0.95rem; /* Tamanho da fonte */
+}
+
+/* 
+ * Texto destacado com valor arrecadado
+ */
+.pts-vakinha-info p strong.pts-arrecado {
+    color: var(--primary-color); /* Cor verde */
+}
+
+/* 
+ * Texto destacado com meta
+ */
+.pts-vakinha-info p strong.pts-meta {
+    color: var(--accent-color); /* Cor de destaque */
+}
+
+/*
+ * Área do botão de contato
+ */
+ .pts-donate-button {
+    display: inline-block; /* Permite largura e altura */
+    padding: 0.8rem 2rem; /* Espaçamento interno */
+    background-color: var(--primary-color); /* Cor de fundo verde */
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 30px; /* Bordas arredondadas */
+    font-weight: bold; /* Negrito */
+    transition: all 0.3s ease; /* Transição suave */
+    margin-top: 1rem; /* Espaçamento superior */
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3); /* Sombra verde */
+    position: relative; /* Permite posicionamento absoluto de pseudo-elementos */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa */
+    cursor: pointer;
+}
+/*
+ * Efeito de brilho ao passar o mouse no botão
+ */
+/* Nova animação - pulsar ao passar o mouse */
+.pts-donate-button:hover {
+    background-color: #3e8e41;
+    box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+    animation: pulse 0.5s ease infinite alternate; /* Animação de pulsar */
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05); /* Aumenta ligeiramente */
+    }
+}
+
+/* Efeito de onda ao clicar */
+.pts-donate-button:active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%, -50%);
+    transform-origin: 50% 50%;
+    animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+
